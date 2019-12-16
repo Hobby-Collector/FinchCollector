@@ -4,5 +4,9 @@ from . import views
 urlpatterns = [
     path('',views.home,name='home'),
     path('about/',views.about, name='about'),
-    path('finches/',views.finches_index, name='finches')
+    path('finches/',views.finches_index, name='finches'),
+    path('finches/<int:finch_id>/',views.finch_detail, name='detail'),
+    path('finches/create/',views.FinchCreate.as_view(),name= 'finches_create'),
+    path('finch/<int:pk>/update/',views.FinchUpdate.as_view(),name = 'finches_update'),
+    path('finch/<int:pk>/delete/',views.FinchDelete.as_view(),name = 'finches_delete')
 ]
